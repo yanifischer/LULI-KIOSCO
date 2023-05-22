@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <!-- css de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- css mio-->
+    <link rel="stylesheet" href="CSS/estilo.css">
+
+    <!-- css tipografia externa  de fonts google-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Rubik+Gemstones&display=swap" rel="stylesheet">
+   <!-- fontawesome iconos-->
+    <script src="https://kit.fontawesome.com/1cd02b6dcd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="marca"> 
+            <h1>KIOSCO LULI</h1>
+        </div>
+          
+        <input type="checkbox" id="menu-check">
+          <label id="menu" for="menu-check"> 
+            <span id="menu-abrir">&#9776;</span>
+            <span id="menu-cerrar">x</span>
+
+          </label>
+        <nav id="botonera">
+          
+            <ul>
+                <li> <a href="#nosotros">RESERVAS</a></li>
+                <li> <a href="#ofertas">OFERTAS</a></li>
+                <li> <a href="#listado">PRECIOS</a></li>
+                <li> <a href="#contactos">CONTACTOS</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <section id="nosotros">
+        <h5 class="fst-italic"> RESERVAS</h5>
+        
+
+        <div class="productos">
+            <h2>RESERVA DE OFERTAS</h2>
+            <form id="form" class="form" action="https://formspree.io/f/mlekzyjq" method="POST">
+                <div class="row g-3">
+                    <div class="col">
+                      <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" aria-label="First name" required>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" name="apellido" placeholder="APELLIDO" aria-label="Last name" required>
+                    </div>
+                </div>
+                <select class="form-select" aria-label="Default select example" name="oferta_numero" required>
+                    <option selected>ELEGIR OFERTA </option>
+                    <option value="1">Galletitas dulces a $100</option>
+                    <option value="2">Cerveza Malta a $80</option>
+                    <option value="3">Yerba Mañanitas de 1 kilo a $700</option>  
+                </select>
+                <input type="number" min="1" max="100" class="form-control" name="cantidad" placeholder="CANTIDAD"required>
+                <div class="row mb-3">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Fecha de retiro: </label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" name="fecha" requerid>
+                    </div>
+                </div>
+                <input type="submit" onclick="formu()">
+                
+              </form>
+
+              <div class="d-grid gap-2">
+                <button onclick="location.href='api.html'" class="btn btn-outline-danger" type="button">Dólar Oficial</button>
+               
+              </div>
+
+             
+      </div>
+    
+     
+      
+</section>
+    
+<section id="ofertas">
+      <h5 class="fst-italic"> OFERTAS</h5>
+      
+             
+        <nav id="boton_ofertas">
+            <ul>
+                <li><a href="#ofertas">DESCUENTOS DEL</a></li>
+                <li><a href="#ofertas" onclick="mostrarBEB(), mostrarBEBI(), mostrarBEBID()">25%</a></li>
+                <li class="fa-solid fa-cart-shopping fa-flip fa-xl" style="color: #12f3e4;"></li>
+                <li><a href="#ofertas" onclick="mostrarGOL(), mostrarGOLO(), mostrarGOLOS()">50%</a></li>
+            </ul>
+        </nav>
+        
+        <div class="ofertas1" id="beb" style="display: none;">
+        </div>
+        <div class="ofertas1" id="bebi" style="display: none;">
+        </div>
+        <div class="ofertas1" id="bebid" style="display: none;">
+            <h4> COMBOS CON EL 25% DE DESCUENTO</h4>
+            <p>DESAYUNO: Café con 3 medialunas a $200</p>
+            <p>BRINDIS: Fernet con cocacola a $800</p>
+            
+        </div>
+        
+        
+        <div class="ofertas2" id="gol" style="display: none;">
+        </div>
+        <div class="ofertas2" id="golo" style="display: none;">
+        </div>
+        <div class="ofertas2" id="golos" style="display: none;">
+            <h4> COMBOS CON EL 50% DE DESCUENTO</h4>
+            <p>LIMPIEZA: 13 productos a $1500</p>
+            <p>COLACIONES: 40 turrones y 12 barritas a $800</p>
+        </div>
+    </section>
+
+    <section id="listado">
+        <h5 class="fst-italic"> PRECIOS</h5>
+       
+            <div class="caja-principal1">
+              <div class="imagen">
+                  <img src="IMAG/salada.jpg" alt="">
+              </div>
+              <div class="texto">
+                 Galletitas saladas: $1300 
+              </div>
+            </div>
+    
+            <div class="caja-principal2">
+              <div class="imagen">
+                  <img src="IMAG/carbon.jpg" alt="">
+              </div>
+              <div class="texto">
+                 Carbón: $500 
+              </div>
+            </div>
+            <div class="caja-principal3">
+              <div class="imagen">
+                  <img src="IMAG/fideos.jpg" alt="">
+              </div>
+              <div class="texto">
+                 fideos: $300 
+              </div>
+            </div>
+          
+     
+            <div class="caja-principal4">
+              <div class="imagen">
+                  <img src="IMAG/cepillo.jpg" alt="">
+              </div>
+              <div class="texto">
+                 Combo cepillos: $300 
+              </div>
+            </div>
+            <div class="caja-principal5">
+              <div class="imagen">
+                  <img src="IMAG/cereales.jpg" alt="">
+              </div>
+              <div class="texto">
+                 Cereales: $300 
+              </div>
+            </div>
+            <div class="caja-principal6">
+              <div class="imagen">
+                  <img src="IMAG/pañales.jpg" alt="">
+              </div>
+              <div class="texto">
+                 Pañales por 58 unidades: $3000 
+              </div>
+            </div>
+       
+        
+        <!--Carrousel no toma la propiedad overflow-->
+        <!--<div class="primero">
+          <div class="carrousel" id="item1">
+            <div class="tarjetascarrousel" id="tarjeta1">
+              <img src="IMAG/imagen2.jpg" alt="">
+            </div>
+            <div class="flechascarrousel">
+              <a href="#item3">
+                <i>*</i>
+              </a>
+              <a href="#item2">
+                <i>*</i>
+              </a>
+        
+            </div>
+          </div>
+          <div class="carrousel" id="item2">
+            <div class="tarjetascarrousel" id="tarjeta2">
+              <img src="IMAG/imagen3.jpg" alt="">
+            </div>
+            <div class="flechascarrousel">
+              <a href="#item1">
+                <i>*</i>
+              </a>
+              <a href="#item3">
+                <i>*</i>
+              </a>
+            </div>
+          </div>
+          <div class="carrousel" id="item3">
+            <div class="tarjetascarrousel" id="tarjeta3">
+              <img src="IMAG/imagen4.jpg" alt="">
+            </div>
+            <div class="flechascarrousel">
+              <a href="#item2">
+                <i>*</i>
+              </a>
+              <a href="#item3">
+                <i>*</i>
+              </a>
+            </div>
+          </div>
+        </div>-->
+    </section>
+    <section id="contactos">
+
+      <div class="flex-container">
+
+        <div class="flex-items">
+          <br>
+          <li class="fa-solid fa-phone-volume fa-bounce fa-lg" style="color: #820ee1;"> 3743444407</li>
+          
+          <br>
+          <br>
+          <p>HORARIO:</p>
+          <p>07:00 a 13:00hs.</p>
+          <p>16:00 a 23:00hs.</p>
+          
+
+        </div>
+
+        <div class="flex-items">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28485.7096300347!2d-55.06558238916017!3d-26.817243199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f82733ad878cd5%3A0x23e3e2c8e2aeb72!2sKiosco%20Luli!5e0!3m2!1ses-419!2sar!4v1682012250953!5m2!1ses-419!2sar" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <div class="flex-items">
+          <img src="IMAG/fotoluli.jpeg" width="200" height="200">
+
+        </div>
+
+
+
+        
+       
+    </section>
+    
+    
+    <footer>
+
+
+        <div class="empresa">
+            <h4> Página Grupo 25</h4>
+        </div>
+
+        <div class="datos2">
+            <h4> CODO A CODO 4.0</h4>
+        </div>
+    </footer>
+
+    <script src="JS/ofertas.js"></script>
+    <script src="JS/formulario.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
